@@ -49,18 +49,8 @@ public  class ProductService {
 
     }
 
-    public ProductDTO updateProduct(int productId,ProductDTO productDTO) {
-        Product product = dataSource.getProductById(productId);
-
-        if (product!=null){
-            product.setTitle(productDTO.getTitle());
-            product.setDescription(productDTO.getDescription());
-            dataSource.addProduct(product);
-        }
-
-        ProductDTO response =   ProductMapper.mapper.productToProductDto(product);
-
-        return response;
+    public void updateProduct(ProductDTO productDTO) {
+         dataSource.updateProduct(ProductMapper.mapper.productDtoToProduct(productDTO));
     }
 
     public void deleteProduct(int productId) {

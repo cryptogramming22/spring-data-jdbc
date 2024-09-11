@@ -25,7 +25,7 @@ public class ProductDataSource {
     }
 
     public void updateProduct(Product product) {
-        String sql = "UPDATE food.product SET imagePath = ?, title = ?, description = ?, distributor = ?, releaseDate = ? WHERE id = ?";
+        String sql = "UPDATE food.product SET image_path = ?, title = ?, description = ?, distributor = ?, release_date = ? WHERE id = ?";
         jdbcTemplate.update(sql, product.getImagePath(), product.getTitle(), product.getDescription(), product.getDistributor(), product.getReleaseDate(), product.getId());
     }
 

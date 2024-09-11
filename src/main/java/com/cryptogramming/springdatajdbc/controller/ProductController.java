@@ -41,11 +41,11 @@ public class ProductController {
     }
 
 
-    @PutMapping(value = "/{productId}")
-    public ResponseEntity  updateProduct(@PathVariable int productId,@RequestBody ProductDTO productDTO){
+    @PutMapping(value = "/")
+    public ResponseEntity  updateProduct(@RequestBody ProductDTO productDTO){
 
-        ProductDTO response =  productService.updateProduct(productId,productDTO);
-        return new ResponseEntity(response,HttpStatus.OK);
+         productService.updateProduct(productDTO);
+        return new ResponseEntity(HttpStatus.OK);
 
     }
 
